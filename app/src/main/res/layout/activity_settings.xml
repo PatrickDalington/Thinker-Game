@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".launcher.Settings">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/ww"
+        android:id="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="THINKER"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:shadowColor="@android:color/white"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="20"
+                android:textColor="@android:color/black"
+                android:id="@+id/think"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:layout_below="@id/think"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/button_back_home"
+                android:textColor="@color/white"
+                android:id="@+id/back_home"
+                android:layout_marginEnd="10dp"/>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <!-- ScrollView to handle multiple settings -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <!-- General Settings Category -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="General Settings"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@color/bg_swipe_item_gray" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_sound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sound Effects"
+                android:checked="true"
+                android:textColor="@color/primary"
+                android:padding="8dp"
+                 />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_music"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Background Music"
+                android:backgroundTint="@color/secondary"
+                android:textColor="@color/primary"
+                android:checked="true"
+                android:padding="8dp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_notifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:textColor="@color/primary"
+                android:checked="true"
+                android:padding="8dp" />
+
+
+            <!-- Control Settings Category -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Control Settings"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@android:color/darker_gray" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_vibration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vibration"
+                android:textColor="@color/primary"
+                android:checked="true"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Control Sensitivity"
+                android:padding="8dp"
+                android:textColor="@android:color/darker_gray"/>
+
+            <SeekBar
+                android:id="@+id/seekbar_control_sensitivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="5"
+                android:padding="8dp" />
+
+            <!-- Other Settings Category -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other Settings"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@color/bg_swipe_item_gray" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Show Tips"
+                android:checked="true"
+                android:textColor="@color/primary"
+                android:padding="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

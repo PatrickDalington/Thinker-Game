@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ww"
+    android:padding="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/header_layout"
+        android:background="@drawable/cartoon_header_bg"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🐰"
+            android:id="@+id/cartoon"
+            android:textColor="@color/black"
+            android:textSize="110sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_toEndOf="@id/cartoon"
+            android:layout_marginTop="70dp"
+            android:id="@+id/board_layout"
+            android:background="@drawable/board_shape">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Select Game Mode"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/header_layout"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:gravity="center">
+
+        <!-- Mode 1 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/easy"
+            android:background="@drawable/button_background"
+            android:padding="20dp"
+            android:clipToPadding="false"
+            android:paddingBottom="20dp"
+            android:elevation="4dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🐣"
+                android:id="@+id/eash_ic"
+                android:layout_centerVertical="true"
+                android:textSize="40sp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="10dp"
+                android:tint="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Easy Mode"
+                android:textSize="22sp"
+                android:id="@+id/easy_mode"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@id/eash_ic"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏰"
+                android:textSize="18sp"
+                android:layout_below="@id/easy_mode"
+                android:layout_toEndOf="@id/eash_ic"
+                android:id="@+id/clock"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete this level in "
+                android:textSize="13sp"
+                android:textColor="@color/bg_swipe_item_gray"
+                android:layout_below="@id/easy_mode"
+                android:layout_toEndOf="@id/clock"
+                android:id="@+id/clock_text"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 mins"
+                android:textSize="13sp"
+                android:textColor="#50CC55"
+                android:layout_below="@id/easy_mode"
+                android:layout_toEndOf="@id/clock_text"
+                android:layout_marginTop="30dp"/>
+
+        </RelativeLayout>
+
+        <!-- Mode 2 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_background"
+            android:padding="20dp"
+            android:clipToPadding="false"
+            android:paddingBottom="20dp"
+            android:id="@+id/normal"
+            android:elevation="4dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🐭"
+                android:id="@+id/normal_ic"
+                android:textSize="40sp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="10dp"
+                android:tint="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normal Mode"
+                android:id="@+id/normal_mode"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@id/normal_ic"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏰"
+                android:textSize="18sp"
+                android:layout_below="@id/normal_mode"
+                android:layout_toEndOf="@id/normal_ic"
+                android:id="@+id/clock_"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete this level in "
+                android:textSize="13sp"
+                android:textColor="@color/bg_swipe_item_gray"
+                android:layout_below="@id/normal_mode"
+                android:layout_toEndOf="@id/clock_"
+                android:id="@+id/clock_text_"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 mins"
+                android:textSize="13sp"
+                android:textColor="#03A9F4"
+                android:layout_below="@id/normal_mode"
+                android:layout_toEndOf="@id/clock_text_"
+                android:layout_marginTop="30dp"/>
+
+        </RelativeLayout>
+
+        <!-- Mode 3 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:padding="20dp"
+            android:clipToPadding="false"
+            android:paddingBottom="20dp"
+            android:elevation="4dp"
+            android:id="@+id/hard"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🐵"
+                android:id="@+id/hard_ic"
+                android:textSize="40sp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="10dp"
+                android:tint="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hard Mode"
+                android:textSize="22sp"
+                android:id="@+id/hard_mode"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@id/hard_ic"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏰"
+                android:textSize="18sp"
+                android:layout_below="@id/hard_mode"
+                android:layout_toEndOf="@id/hard_ic"
+                android:id="@+id/clock__"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete this level in "
+                android:textSize="13sp"
+                android:textColor="@color/bg_swipe_item_gray"
+                android:layout_below="@id/hard_mode"
+                android:layout_toEndOf="@id/clock__"
+                android:id="@+id/clock_text__"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 mins"
+                android:textSize="13sp"
+                android:textColor="#FF9800"
+                android:layout_below="@id/hard_mode"
+                android:layout_toEndOf="@id/clock_text__"
+                android:layout_marginTop="30dp"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/back_arrow"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:textSize="50sp"
+            android:id="@+id/back"/>
+
+    </LinearLayout>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

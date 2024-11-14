@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="app_name">Thinker</string>
+
+
+    <string name="activity_title_launcher">Thinker</string>
+    <string name="activity_title_about">About</string>
+
+    <string name="activity_title_demo_d_minimal">Draggable (Minimal)</string>
+    <string name="activity_title_demo_d_basic">Draggable (Basic)</string>
+    <string name="activity_title_alphabet">ALPHABETS</string>
+    <string name="activity_title_emoji">EMOJI</string>
+    <string name="activity_title_number">NUMBERS</string>
+    <string name="activity_title_alphabets_ordering">ALPHABETICAL PUZZLE</string>
+    <string name="activity_title_demo_d_on_longpress">Drag on Long Press</string>
+    <string name="activity_title_demo_d_check_can_drop">Draggable (uses onCheckCanDrop)</string>
+    <string name="activity_title_demo_s_minimal">Swipeable (Minimal)</string>
+    <string name="activity_title_demo_s_basic">Swipeable (Basic)</string>
+    <string name="activity_title_demo_s_on_longpress">Swipe on Long Press</string>
+    <string name="activity_title_demo_us">Button under swipeable item</string>
+    <string name="activity_title_demo_e_minimal">Expandable (Minimal)</string>
+    <string name="activity_title_demo_e_basic">Expandable (Basic)</string>
+    <string name="activity_title_demo_ds">Draggable + Swipeable</string>
+    <string name="activity_title_demo_eds">Expandable + Draggable + Swipeable</string>
+    <string name="activity_title_demo_d_with_section">Draggable with Section</string>
+    <string name="activity_title_demo_ed_with_section">Expandable + Draggable with Section</string>
+    <string name="activity_title_demo_e_add_remove">Expandable (Add/Remove items)</string>
+    <string name="activity_title_demo_e_already_expanded">Expandable (Groups already expanded)</string>
+    <string name="activity_title_demo_s_vertical">Swipeable (Vertical)</string>
+    <string name="activity_title_demo_s_viewpager">Swipeable with ViewPager</string>
+    <string name="activity_title_demo_hf_minimal">Header/Footer (Minimal)</string>
+    <string name="activity_title_demo_hf_e">Expandable with Header/Footer</string>
+    <string name="activity_title_demo_hf_add_remove">Header/Footer (Add/Remove items)</string>
+    <string name="activity_title_demo_wa_insertion">Insertion custom adapter</string>
+    <string name="activity_title_demo_wa_filtering">Filtering custom adapter</string>
+    <string name="activity_title_demo_composition_all">Composition All</string>
+
+    <string name="snack_bar_text_item_removed">1 item removed</string>
+    <string name="snack_bar_text_group_item_removed">1 group item removed</string>
+    <string name="snack_bar_text_child_item_removed">1 child item removed</string>
+    <string name="snack_bar_text_button_clicked">Button clicked! (position = %1$d)</string>
+    <string name="snack_bar_action_undo">UNDO</string>
+
+    <string name="dialog_message_item_pinned">Item pinned! (position = %1$d)</string>
+    <string name="dialog_message_group_item_pinned">Group item pinned! (group = %1$d)</string>
+    <string name="dialog_message_child_item_pinned">Child item pinned! (group = %1$d, child = %2$d)</string>
+
+    <string name="menu_item_about">About</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="coin_image_for_level_3">Coin image for level 3</string>
+    <string name="level_3">Level 3</string>
+    <string name="earn_4000_coins">(Earn 4000 coins)</string>
+    <string name="line_demacator_before_play_button">Line demacator before play button</string>
+    <string name="play_button">Play button</string>
+    <string name="level_2">Level 2</string>
+    <string name="cin_image_for_level_2">Cin image for level 2</string>
+</resources>

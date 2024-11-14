@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"
+        android:icon="@drawable/settings"/>
+
+    <item
+        android:id="@+id/instructions"
+        android:title="Instructions"
+        android:icon="@drawable/settings"/>
+
+    <item
+        android:id="@+id/license"
+        android:title="License"
+        android:icon="@drawable/settings"
+        />
+
+    <item
+        android:id="@+id/about"
+        android:title="@string/menu_item_about"
+        android:tooltipText="You are blessed"
+        android:icon="@drawable/settings"/>
+
+
+</menu>

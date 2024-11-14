@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/alphabet_home_bg"
+    android:background="@color/primary">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:visibility="gone"
+        android:id="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relative_layout">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mode"
+                    android:textSize="9sp"
+                    android:textColor="#EED4D1D1"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Practice"
+                    android:id="@+id/level"
+                    android:textColor="#F5FFFFFF"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="20"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/white"
+                android:id="@+id/time"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/speaker_on"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="4dp"
+                android:id="@+id/speaker"/>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ABCDEFGHI"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:padding="8dp"
+        android:background="@color/black"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="20"
+        android:elevation="15dp"
+        android:layout_below="@id/toolbar"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:id="@+id/displayText"
+        tools:targetApi="lollipop" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/displayText"
+        android:layout_centerHorizontal="true"
+        android:background="#00000000"
+        style="@style/myRecyclerViewStyle"/>
+
+    <RelativeLayout
+        android:id="@+id/score_board"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recycler_view"
+        android:background="@drawable/game_board_bg"
+        android:layout_margin="10dp"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:elevation="10dp"
+        android:gravity="center_horizontal">
+
+        <!-- Current Level Display -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/level_layout"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Level"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" : "
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/current_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="start"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/score_layout"
+            android:layout_below="@id/level_layout"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score"
+                android:textSize="14sp"
+                android:textColor="@color/teal_200"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" : "
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/current_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="start"/>
+        </LinearLayout>
+
+
+        <!-- Highest Score Display -->
+        <TextView
+            android:id="@+id/highest_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Highest: 500"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:gravity="end"/>
+
+        <!-- Progress Bar for Game Progress -->
+        <ProgressBar
+            android:id="@+id/game_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/highest_score"
+            android:layout_marginTop="16dp"
+            android:indeterminate="false"
+            android:progress="30"
+            android:visibility="gone"
+            android:max="100"/>
+
+        <!-- GIF Reaction Image (Initially Invisible) -->
+        <ImageView
+            android:id="@+id/win_gif"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/game_progress"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:contentDescription="TODO"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Next"
+        android:textColor="@color/black"
+        android:background="@drawable/button_bg"/>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

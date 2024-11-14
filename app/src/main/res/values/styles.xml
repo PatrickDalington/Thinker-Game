@@ -1,0 +1,24 @@
+<resources>
+    <!-- Full-screen bottom sheet style -->
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!-- Custom bottom sheet animation style -->
+    <style name="BottomSheetDialogThemeWithAnimation" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item> <!-- Optional, for exit animation -->
+        <item name="bottomSheetStyle">@style/BottomSheetWithAnimation</item>
+    </style>
+
+    <style name="BottomSheetWithAnimation" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="behavior_peekHeight">0dp</item> <!-- Ensure it starts from the bottom -->
+    </style>
+</resources>

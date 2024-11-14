@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    style="@style/commonListItemStyle"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/frame_layout"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="66dp"
+    android:background="@drawable/bg_swipe_item_neutral">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:layout_gravity="center_horizontal"
+        android:foreground="?attr/selectableItemBackground"
+        tools:ignore="UselessParent"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/emoji"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|left"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="😼"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@android:id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|left"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="A"
+            android:layout_marginTop="40sp"
+            tools:ignore="RtlHardcoded" />
+
+
+    </FrameLayout>
+
+</FrameLayout>
