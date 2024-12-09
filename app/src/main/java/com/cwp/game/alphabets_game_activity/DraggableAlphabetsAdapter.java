@@ -42,6 +42,10 @@ public class DraggableAlphabetsAdapter extends RecyclerView.Adapter<DraggableAlp
     private int mItemMoveMode = RecyclerViewDragDropManager.ITEM_MOVE_MODE_DEFAULT;
     private final CoinsUpdateListener mCoinsUpdateListener;
 
+    private final DiamondUpdateListener mDiamondUpdateListener;
+
+    private int currentDiamonds = 0;
+    private int currentCoins = 0;
     private AbstractDataProvider mProvider;
     private final Context mContext;
     private final RecyclerView mRecyclerView;
@@ -53,8 +57,9 @@ public class DraggableAlphabetsAdapter extends RecyclerView.Adapter<DraggableAlp
     public boolean isMusicEnabled;
 
 
-    public DraggableAlphabetsAdapter(CoinsUpdateListener mCoinsUpdateListener, Context context, AbstractDataProvider dataProvider, RecyclerView recyclerView, ItemClickListener itemClickListener, boolean isMusicEnabled) {
+    public DraggableAlphabetsAdapter(CoinsUpdateListener mCoinsUpdateListener, DiamondUpdateListener mDiamondUpdateListener, Context context, AbstractDataProvider dataProvider, RecyclerView recyclerView, ItemClickListener itemClickListener, boolean isMusicEnabled) {
         this.mCoinsUpdateListener = mCoinsUpdateListener;
+        this.mDiamondUpdateListener = mDiamondUpdateListener;
         this.mContext = context;
         this.mProvider = dataProvider;
         this.mRecyclerView = recyclerView;
@@ -147,6 +152,12 @@ public class DraggableAlphabetsAdapter extends RecyclerView.Adapter<DraggableAlp
         return mProvider.getCount();
     }
 
+
+    public void setData(AbstractDataProvider newDataProvider) {
+        this.mProvider = newDataProvider;
+        notifyDataSetChanged();
+    }
+
     @Override
     public void onMoveItem(int fromPosition, int toPosition) {
         Log.d("Item movement", "onMoveItem(fromPosition = " + fromPosition + ", toPosition = " + toPosition + ")");
@@ -228,7 +239,13 @@ public class DraggableAlphabetsAdapter extends RecyclerView.Adapter<DraggableAlp
 //            }
 
             // Notify the fragment to update the score by +20
+            currentCoins += 20;
             mCoinsUpdateListener.onCoinsUpdate(20);
+
+            if (currentCoins % 60 == 0){
+                currentDiamonds++;
+                mDiamondUpdateListener.onDiamondUpdate(currentDiamonds);
+            }
 
         }
 

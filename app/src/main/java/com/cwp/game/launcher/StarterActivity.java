@@ -1,8 +1,11 @@
 package com.cwp.game.launcher;
 
+import static android.Manifest.permission.POST_NOTIFICATIONS;
+
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -11,11 +14,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.cwp.game.R;
 
@@ -37,14 +38,26 @@ public class StarterActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
         more_games.setOnClickListener(v -> {
             Toast.makeText(this, "More games coming soon! 😎", Toast.LENGTH_SHORT).show();
         });
 
+
         applyZoomAnimation(more_games);
         applyZoomAnimation(play);
 
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{POST_NOTIFICATIONS}, 1);
+            }
+        }
+
     }
+
 
     private void applyZoomAnimation(View view) {
         ObjectAnimator scaleX = ObjectAnimator.ofFloat(view, "scaleX", 1f, 1.05f);

@@ -57,4 +57,9 @@
     <string name="play_button">Play button</string>
     <string name="level_2">Level 2</string>
     <string name="cin_image_for_level_2">Cin image for level 2</string>
+    <string name="continue_game_desc">Continue game</string>
+    <string name="restart_game_desc">Restart game</string>
+    <string name="settings_game_desc">Game settings</string>
+    <string name="quit_game_desc">Quit game</string>
+    <string name="game_paused_desc">Header Description for Pausing the game</string>
 </resources>

@@ -2,6 +2,8 @@ package com.cwp.game.alphabets_game_activity;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import static com.cwp.game.utils.Constants.USER_PREFS;
+
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,7 +26,7 @@ import androidx.fragment.app.Fragment;
 import com.cwp.game.R;
 
 public class ChooseGameLevel extends Fragment {
-    private static final String USER_PREFS = "Users";
+
     private ProgressBar gameProgress;
     private TextView progressText;
     private CardView level1Layout, level2Layout, level3Layout;
@@ -106,9 +108,10 @@ public class ChooseGameLevel extends Fragment {
             intent.putExtra("level", level);
             if (level.equals("1")) time = "180";
             if (level.equals("2")) time = "120";
-            if (level.equals("3")) time = "60";
+            if (level.equals("3")) time = "3";
             intent.putExtra("timer", time);
             startActivity(intent);
+            requireActivity().finish();
         } else {
             Toast.makeText(getActivity(), "Level not unlocked yet", Toast.LENGTH_SHORT).show();
         }

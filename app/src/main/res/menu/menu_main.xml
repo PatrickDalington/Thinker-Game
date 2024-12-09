@@ -6,8 +6,8 @@
         android:icon="@drawable/settings"/>
 
     <item
-        android:id="@+id/instructions"
-        android:title="Instructions"
+        android:id="@+id/profile"
+        android:title="Profile"
         android:icon="@drawable/settings"/>
 
     <item

@@ -88,7 +88,7 @@
                 android:padding="8dp" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/switch_notifications"
+                android:id="@+id/switch_drop_notifications"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Notifications"

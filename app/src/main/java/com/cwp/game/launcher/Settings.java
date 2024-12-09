@@ -1,10 +1,9 @@
 package com.cwp.game.launcher;
 
-import android.content.Intent;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CompoundButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -18,7 +17,10 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class Settings extends AppCompatActivity {
 
+    private static final String PREFS_NAME = "game_settings";
+    private static final String KEY_NOTIFICATIONS_ENABLED = "drop_notifications_enabled";
     Button back_home;
+    SwitchMaterial drop_down_notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +36,14 @@ public class Settings extends AppCompatActivity {
         back_home = findViewById(R.id.back_home);
         SwitchMaterial switchMusic = findViewById(R.id.switch_music);
         SwitchMaterial switchSoundEffect = findViewById(R.id.switch_sound);
+        drop_down_notification = findViewById(R.id.switch_drop_notifications);
 
         back_home.setOnClickListener(v->{
             finish();
         });
 
         // Load saved switch state (enabled/disabled)
-        SharedPreferences preferences = getSharedPreferences("game_settings", MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         boolean isMusicEnabled = preferences.getBoolean("music_enabled", true);
         boolean isSoundEffectEnabled = preferences.getBoolean("effects_enabled", true);
         switchMusic.setChecked(isMusicEnabled);
@@ -61,6 +64,11 @@ public class Settings extends AppCompatActivity {
         }));
 
 
+        drop_down_notification.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            setDropNotificationsEnabled(isChecked);
+        });
+
+
 
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
@@ -71,5 +79,10 @@ public class Settings extends AppCompatActivity {
         getOnBackPressedDispatcher().addCallback(this, callback);
     }
 
-
+    private void setDropNotificationsEnabled(boolean isEnabled) {
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean(KEY_NOTIFICATIONS_ENABLED, isEnabled);
+        editor.apply();
+    }
 }

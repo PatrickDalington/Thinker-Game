@@ -1,3 +1,2 @@
 # Thinker-Game
-# Thinker-Game
-# Thinker-Game
+A game for everyone

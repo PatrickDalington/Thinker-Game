@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:id="@+id/main_frame"
+    android:gravity="center">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:background="@drawable/game_paused_bg"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/continue_game"
+                android:contentDescription="@string/continue_game_desc" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/restart_game"
+                android:contentDescription="@string/restart_game_desc" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/settings_game"
+                android:contentDescription="@string/settings_game_desc" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="50dp"
+                android:src="@drawable/quit_game"
+                android:contentDescription="@string/quit_game_desc" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/game_paused"
+            android:contentDescription="@string/game_paused_desc" />
+
+
+</RelativeLayout>

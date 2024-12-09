@@ -72,6 +72,7 @@
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
+            android:id="@+id/next_level_button"
             android:src="@drawable/next_level_button"/>
 
 

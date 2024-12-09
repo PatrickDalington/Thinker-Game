@@ -99,6 +99,48 @@ public class AlphabetsDataProvider extends AbstractDataProvider {
 
     }
 
+    public void reloadData() {
+        mData.clear();
+        String a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String t = shuffleString("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+
+        Map<String, Object> map = new TreeMap<>();
+
+        for (int x = 0; x < t.length(); x++) {
+            map.put(String.valueOf(x), a.charAt(x));
+        }
+
+        List<Map.Entry<String, Object>> e = new ArrayList<>(map.entrySet());
+        Collections.shuffle(e);
+        Map<String, Object> r = new LinkedHashMap<>();
+        for (Map.Entry<String, Object> entry : e) {
+            r.put(entry.getKey(), entry.getValue());
+        }
+
+        int min = 0;
+        int max = colorId.size() - 1;
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < t.length(); j++) {
+                long id = mData.size();
+                int viewType = 0;
+                Collections.shuffle(colorId);
+                int random = new Random().nextInt((max - min) + 1) + min;
+
+                String text;
+                if (r.entrySet().toArray()[j].toString().length() == 3)
+                    text = r.entrySet().toArray()[j].toString().substring(2);
+                else
+                    text = r.entrySet().toArray()[j].toString().substring(3);
+
+                int charPos = Integer.parseInt((String) r.keySet().toArray()[j]);
+                int color = colorId.get(random);
+                int swipeReaction = RecyclerViewSwipeManager.REACTION_CAN_SWIPE_UP | RecyclerViewSwipeManager.REACTION_CAN_SWIPE_DOWN;
+
+                mData.add(new ConcreteData(charPos, id, viewType, text, swipeReaction, color));
+            }
+        }
+    }
+
     public void reshuffleItems() {
         Collections.shuffle(mData);
     }

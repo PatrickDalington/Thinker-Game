@@ -46,8 +46,10 @@ public class OptionsMenuFragment extends Fragment {
                 startSettingActivity();
                 return true;
 
-            case R.id.instructions:
+            case id.profile:
                 // Handle instructions action
+                Intent intent = new Intent(requireActivity(), ProfileActivity.class);
+                startActivity(intent);
                 return true;
 
             case R.id.license:

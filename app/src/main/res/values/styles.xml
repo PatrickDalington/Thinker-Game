@@ -21,4 +21,6 @@
         <item name="android:layout_height">match_parent</item>
         <item name="behavior_peekHeight">0dp</item> <!-- Ensure it starts from the bottom -->
     </style>
+
+
 </resources>

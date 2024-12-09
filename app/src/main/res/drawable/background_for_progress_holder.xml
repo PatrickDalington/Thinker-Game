@@ -9,4 +9,13 @@
         android:width="2dp"
         android:color="#A59F98"/>
 
+    <padding
+        android:left="12dp"
+        android:top="12dp"
+        android:right="12dp"
+        android:bottom="12dp"/>
+
+    <solid
+        android:color="#FFCC4D"/>
+
 </shape>

@@ -20,7 +20,7 @@ import java.util.Locale;
 public class GameCompleted extends Fragment implements LevelChangeListener {
     private static final String ARG_LEVEL = "level";
     private String level, myCoins;
-    private ImageView levels;
+    private ImageView levels, next_level_btn;
     private TextView coin;
 
     public static GameCompleted newInstance(String level) {
@@ -64,6 +64,7 @@ public class GameCompleted extends Fragment implements LevelChangeListener {
         View view = inflater.inflate(R.layout.fragment_game_completed, container, false);
         levels = view.findViewById(R.id.levels);
         coin = view.findViewById(R.id.coins);
+        next_level_btn = view.findViewById(R.id.next_level_button);
 
         Toast.makeText(getActivity(), "Level completed: " + level, Toast.LENGTH_SHORT).show();
         if (level != null) {
@@ -76,6 +77,13 @@ public class GameCompleted extends Fragment implements LevelChangeListener {
                 levels.setImageResource(R.drawable.level_3);
             }
         }
+
+        next_level_btn.setOnClickListener(v -> {
+            ChooseGameLevel chooseGameLevel = new ChooseGameLevel();
+            requireActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, chooseGameLevel)
+                    .commit();
+        });
 
         // Show animated coins gained
         coinsCounter(Integer.parseInt(myCoins));
